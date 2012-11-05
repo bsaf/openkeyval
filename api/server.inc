@@ -92,6 +92,9 @@
 
       $ip = $_SERVER['REMOTE_ADDR'];
 
+      # Have added a return here to switch off throttling
+      return;
+
       # Dirty hack for time being
       if ($ip == "184.72.10.139" || $ip == "121.98.218.129") {
         //  121.98.218.129 = Nick Coughlin, working on a project for 10k.aneventapart.com
