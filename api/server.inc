@@ -246,6 +246,8 @@
       $http_message = $http_status_messages[$http_code];
       header("HTTP/1.0 {$http_code} {$http_message}");
       header("Content-Type: {$content_type}");
+      header("Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0"); // Don't cache
+      header("Pragma: no-cache");
       if(!is_string($body)) {
         $body['documentation_url'] = 'http://openkeyval.org/';
         $body = json_encode($body);
